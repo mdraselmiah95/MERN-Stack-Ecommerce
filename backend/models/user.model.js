@@ -45,11 +45,24 @@ const userSchema = new mongoose.Schema({
   resetPasswordExpire: Date,
 });
 
+// Encrypting password before saving user
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  this.password = await bcrypt.hash(this.password, 10);
+});
+
 // JWT TOKEN
 userSchema.methods.getJWTToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_TIME,
   });
+};
+
+// Compare Password
+userSchema.methods.comparePassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
 };
 
 module.exports = mongoose.model("User", userSchema);
