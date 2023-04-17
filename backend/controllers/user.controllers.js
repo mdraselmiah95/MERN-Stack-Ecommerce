@@ -1,5 +1,6 @@
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const User = require("../models/user.model");
+const sendToken = require("../utils/jwtToken");
 
 // Register a User
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
@@ -14,4 +15,6 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
       url: "https://tomrider.com",
     },
   });
+
+  sendToken(user, 200, res);
 });
