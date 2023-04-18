@@ -67,3 +67,16 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
     message: "Product deleted Successfully",
   });
 });
+
+// Get Single product details
+exports.getSingleProduct = catchAsyncErrors(async (req, res, next) => {
+  const product = await Product.findById(req.params.id);
+  if (!product) {
+    return next(new ErrorHandler("Product Not Found", 404));
+  }
+
+  res.status(200).json({
+    success: true,
+    product,
+  });
+});
