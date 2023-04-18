@@ -19,8 +19,10 @@ app.get("/", (req, res) => {
 });
 
 //TODO : Route Imports
+const products = require("./routes/product.route");
 const user = require("./routes/user.route");
 
+app.use("/api/v1", products);
 app.use("/api/v1", user);
 
 //TODO : Middleware for Errors
@@ -28,4 +30,4 @@ app.use(errorMiddleware);
 
 module.exports = app;
 
-// video: 01:08:00 are the main coolest
+// video: 01:08:00 are the
