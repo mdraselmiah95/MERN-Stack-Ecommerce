@@ -6,6 +6,7 @@ import Products from "../pages/Products";
 import Cart from "../pages/Cart";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
+import NotFound from "../pages/404";
 
 const Layout = () => {
   return (
@@ -14,16 +15,19 @@ const Layout = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products">
-          <Route index element={Products} />
+          <Route index element={<Products />} />
         </Route>
         <Route path="/carts">
           <Route index element={<Cart />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
 };
 
 export default Layout;
+
+//13
