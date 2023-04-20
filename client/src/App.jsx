@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import SuspenseFallback from "./components/SuspenseFallback";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./pages/404";
-import Layout from "./Layouts/Layout";
+import Layout from "./Layouts";
 
 const App = () => {
   return (
@@ -16,3 +16,5 @@ const App = () => {
 };
 
 export default App;
+
+//==> video: 00:12:44
