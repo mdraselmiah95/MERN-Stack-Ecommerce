@@ -1,7 +1,11 @@
 import React from "react";
 
 const SuspenseFallback = () => {
-  return <div>SuspenseFallback</div>;
+  return (
+    <div>
+      <h2>Loading...</h2>
+    </div>
+  );
 };
 
 export default SuspenseFallback;
