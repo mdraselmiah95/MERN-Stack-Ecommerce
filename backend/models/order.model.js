@@ -64,17 +64,17 @@ const orderSchema = mongoose.Schema({
     default: 0,
   },
   taxPrice: {
-    type: number,
+    type: Number,
     required: true,
     default: 0,
   },
   shippingPrice: {
-    type: number,
+    type: Number,
     required: true,
     default: 0,
   },
   totalPrice: {
-    type: number,
+    type: Number,
     required: true,
     default: 0,
   },

@@ -21,9 +21,11 @@ app.get("/", (req, res) => {
 //TODO : Route Imports
 const products = require("./routes/product.route");
 const user = require("./routes/user.route");
+const order = require("./routes/order.route");
 
 app.use("/api/v1", products);
 app.use("/api/v1", user);
+app.use("/api/v1", order);
 
 //TODO : Middleware for Errors
 app.use(errorMiddleware);
