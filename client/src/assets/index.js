@@ -26,16 +26,16 @@ import flash3 from "./images/flash/flash-3.png";
 import flash4 from "./images/flash/flash-4.png";
 import flash5 from "./images/flash/flash-5.png";
 // Shope Images
-import shope1 from "./images/shops/shops-1.png";
-import shope2 from "./images/shops/shops-2.png";
-import shope3 from "./images/shops/shops-3.png";
-import shope4 from "./images/shops/shops-4.png";
-import shope5 from "./images/shops/shops-5.png";
-import shope6 from "./images/shops/shops-6.png";
-import shope7 from "./images/shops/shops-7.png";
-import shope8 from "./images/shops/shops-8.png";
-import shope9 from "./images/shops/shops-9.png";
-import shope10 from "./images/shops/shops-10.png";
+import shop1 from "./images/shops/shops-1.png";
+import shop2 from "./images/shops/shops-2.png";
+import shop3 from "./images/shops/shops-3.png";
+import shop4 from "./images/shops/shops-4.png";
+import shop5 from "./images/shops/shops-5.png";
+import shop6 from "./images/shops/shops-6.png";
+import shop7 from "./images/shops/shops-7.png";
+import shop8 from "./images/shops/shops-8.png";
+import shop9 from "./images/shops/shops-9.png";
+import shop10 from "./images/shops/shops-10.png";
 
 const assets = {
   images: {
@@ -71,16 +71,16 @@ const assets = {
       flash5,
     },
     shops: {
-      shope1,
-      shope2,
-      shope3,
-      shope4,
-      shope5,
-      shope6,
-      shope7,
-      shope8,
-      shope9,
-      shope10,
+      shop1,
+      shop2,
+      shop3,
+      shop4,
+      shop5,
+      shop6,
+      shop7,
+      shop8,
+      shop9,
+      shop10,
     },
   },
 };
