@@ -2,11 +2,17 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const { pathname } = useLocation();
   return (
     <>
       <header className="header">
         <div className="container d_flex">
-          <div className="catagories d_flex">
+          <div
+            className="catagories d_flex"
+            style={{
+              display: pathname.startsWith("/products") ? "none" : null,
+            }}
+          >
             <span className="fa-solid fa-border-all" />
             <h4>
               Categories <i className="fas fa-caret-down" />
