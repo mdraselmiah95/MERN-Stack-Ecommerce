@@ -53,6 +53,10 @@
   font-size: 15px;
 }
 
+.search-box input:focus {
+  outline: none;
+}
+
 .search-box span {
   width: 20%;
   opacity: 0.5;
@@ -118,3 +122,78 @@
 }
 
 /*------search-----------*/
+.catagories {
+  background-color: #f6f9fc;
+  padding: 0px 30px;
+  border-radius: 5px;
+  height: 6vh;
+  margin-top: 5px;
+}
+
+.catagories span {
+  margin-right: 20px;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.catagories h4 {
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.catagories h4 i {
+  margin-left: 10px;
+}
+
+header {
+  height: 8vh;
+  box-shadow: -1px 15px 17px -8px rgba(0, 0, 0, 0.1);
+}
+
+header ul {
+  line-height: 8vh;
+}
+
+header ul li {
+  margin-left: 30px;
+}
+
+header ul li a {
+  transition: 0.5s;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+header ul li a:hover {
+  color: #ff014f;
+}
+
+.heading .heading-left i {
+  font-size: 30px;
+}
+
+.heading .heading-left h2 {
+  font-size: 25px;
+  margin: 5px;
+}
+
+.heading .heading-right i,
+.heading .heading-right {
+  text-align: right;
+  color: grey;
+}
+
+.open {
+  display: none;
+}
+
+.search.active {
+  height: 12vh;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
