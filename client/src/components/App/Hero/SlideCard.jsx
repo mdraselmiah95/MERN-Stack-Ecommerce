@@ -10,7 +10,7 @@ const SlideCard = () => {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     appendDots: (dots) => {
       return <ul style={{ margin: "0px" }}>{dots}</ul>;
     },
@@ -21,7 +21,7 @@ const SlideCard = () => {
       <Slider {...settings}>
         {sData.map((value) => {
           return (
-            <div className="box d_flex top" key={value.id}>
+            <div className="box top slider-container" key={value.id}>
               <div className="left">
                 <h1>{value.title}</h1>
                 <p>{value.desc}</p>
