@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import assets from "../../../../assets";
 
 const Search = () => {
@@ -17,6 +18,14 @@ const Search = () => {
             onKeyDown={handleKeyDown}
           />
           <span>All Category</span>
+        </div>
+        <div className="icon f_flex width">
+          <div className="cart">
+            <Link to="/carts">
+              <i className="fa fa-shopping-bag icon-circle" />
+              <span> 0</span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

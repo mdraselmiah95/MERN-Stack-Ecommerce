@@ -1,3 +1,4 @@
+/*------head-----------*/
 .head {
   background-color: #0f3460;
   padding: 10px 0;
@@ -12,3 +13,108 @@
   margin-right: 30px;
   font-size: 13px;
 }
+/*------head-----------*/
+/*------search-----------*/
+.search {
+  padding: 20px 0;
+}
+
+.search .logo img {
+  width: auto;
+  height: auto;
+}
+
+.search .width {
+  width: 20%;
+}
+
+.search-box {
+  width: 80%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  /*padding: 10px;*/
+  border-radius: 50px;
+}
+
+.search-box i {
+  width: 5%;
+  text-align: center;
+  font-size: 20px;
+  opacity: 0.5;
+  padding: 15px 20px;
+  font-size: 17px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px;
+}
+
+::placeholder {
+  font-size: 15px;
+}
+
+.search-box span {
+  width: 20%;
+  opacity: 0.5;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.cart {
+  position: relative;
+}
+
+.search .cart span {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #e94560;
+  font-size: 12px;
+  color: #fff;
+}
+
+.search .f_flex {
+  justify-content: end;
+}
+
+.contentWidth {
+  width: 77%;
+}
+
+.category {
+  box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
+  background-color: #fff;
+  width: 23%;
+  height: 510px;
+  padding: 15px 0;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.category img {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  object-fit: contain;
+}
+
+.category span {
+  margin: 10px 20px;
+  text-transform: capitalize;
+}
+
+.category .box {
+  transition: 0.5s;
+  padding: 0 20px;
+}
+
+.category .box:hover {
+  background-color: #ffe1e6;
+  cursor: pointer;
+}
+
+/*------search-----------*/
