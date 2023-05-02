@@ -2,7 +2,6 @@ import React from "react";
 import Rating from "@mui/material/Rating";
 
 const FlashCard = ({ product, addToCart }) => {
-  console.log(product);
   return (
     <div className="product_container ">
       <div className="product mtop">
