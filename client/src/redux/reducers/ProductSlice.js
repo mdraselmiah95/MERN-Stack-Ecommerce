@@ -9,7 +9,7 @@ const initialState = {
   dashboard: {},
 };
 
-const productSlice = createSlice({
+export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
@@ -26,5 +26,16 @@ const productSlice = createSlice({
       state.isLoading = false;
       state.productsInfo = [];
     },
+    clearProduct: (state) => {
+      state.isLoading = false;
+      state.productsInfo = [];
+      state.error = "";
+    },
   },
 });
+
+const { reducer, actions } = productSlice;
+export const { productPending, productSuccess, productFailure, clearProduct } =
+  actions;
+
+export default reducer;
