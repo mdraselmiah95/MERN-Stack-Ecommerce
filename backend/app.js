@@ -31,5 +31,3 @@ app.use("/api/v1", order);
 app.use(errorMiddleware);
 
 module.exports = app;
-
-// video: 02:37:00 1st part done
