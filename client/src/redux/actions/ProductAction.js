@@ -1,5 +1,9 @@
 import axios from "axios";
-import { productFailure, productPending } from "../reducers/ProductSlice";
+import {
+  productFailure,
+  productPending,
+  productSuccess,
+} from "../reducers/ProductSlice";
 import { getAPI } from "../../API/CallAPI";
 
 export const getAllProducts = (params) => async (dispatch) => {
@@ -8,7 +12,9 @@ export const getAllProducts = (params) => async (dispatch) => {
     if (!params) params = "";
     const response = await getAPI(`/products${params}`);
     if (response.success === true) {
-      console.log(response);
+      dispatch(productSuccess(response.products));
+    } else {
+      dispatch(productFailure(response.message));
     }
   } catch (error) {
     dispatch(productFailure(error.message));
