@@ -8,7 +8,9 @@ const Search = () => {
     <section className="search">
       <div className="container c_flex">
         <div className="logo width ">
-          <img src={assets?.images?.logo} alt="logo" />
+          <Link to="/">
+            <img src={assets?.images?.logo} alt="logo" />
+          </Link>
         </div>
         <div className="search-box f_flex">
           <i className="fa fa-search" />
