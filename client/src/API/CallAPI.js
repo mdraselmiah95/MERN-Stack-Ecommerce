@@ -1,11 +1,29 @@
-import axios from "axios";
+import axios from "./configAxios";
 
-let AUTH_TOKEN = localStorage.getItem("token");
+// get api :: getAPI
 
-axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL;
-axios.defaults.headers.common["Authorization"] = `Bearer ${AUTH_TOKEN}`;
-axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
-axios.defaults.headers.common["Access-Control-Allow-Origin"] =
-  "GET,PUT,POST,DELETE,PATCH,OPTIONS";
+export const getAPI = async (url) => {
+  const response = await axios.get(url);
+  return response.data;
+};
 
-export default axios;
+// post api :: postAPI
+
+export const postAPI = async (url, data) => {
+  const response = await axios.post(url, data);
+  return response.data;
+};
+
+// put api :: putAPI
+
+export const putAPI = async (url, data) => {
+  const response = await axios.put(url, data);
+  return response.data;
+};
+
+// delete api :: deleteAPI
+
+export const deleteApi = async (url) => {
+  const response = await axios.delete(url);
+  return response.data;
+};
