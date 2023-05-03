@@ -50,6 +50,43 @@ const Cart = () => {
                 Action
               </Typography>
             </Card>
+
+            <Card
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                p: 2,
+                pr: 5,
+                border: "none",
+                boxShadow: "none",
+              }}
+              // key={index}
+            >
+              <Typography variant="h6" component="div">
+                # 1
+              </Typography>
+
+              <Avatar
+                alt="product_image"
+                src=""
+                sx={{ width: 60, height: 60 }}
+              />
+              <Typography variant="h6" component="div">
+                name
+              </Typography>
+              <Typography variant="h6" component="div">
+                1
+              </Typography>
+              <Typography variant="h6">10$</Typography>
+              <Button
+                variant="contained"
+                color="error"
+                // onClick={() => removeItemFromCart(cart)}
+              >
+                Remove
+              </Button>
+            </Card>
           </Stack>
         </div>
       </div>
