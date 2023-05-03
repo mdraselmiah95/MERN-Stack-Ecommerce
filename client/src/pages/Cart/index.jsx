@@ -4,13 +4,14 @@ import WHiteSpace from "../../components/App/whitespac/WHiteSpace";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { clearCartsAction } from "../../redux/actions/CartAction";
-import { getCartDetails } from "../../utils/helper";
+import { getCartDetails, getCartProductPriceInfo } from "../../utils/helper";
 
 const Cart = () => {
   const { cartProducts } = useSelector((state) => state.carts);
   const carts = getCartDetails(cartProducts);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const priceInfo = getCartProductPriceInfo(carts);
 
   const removeItemFromCart = (cart) => {
     dispatch(clearCartsAction(cartProducts, cart));
@@ -142,10 +143,18 @@ const Cart = () => {
                       // alignItems: "center",
                     }}
                   >
-                    <Typography variant="h6">Total Quantity: 7</Typography>
-                    <Typography variant="h6">Total Price: 100 $</Typography>
-                    <Typography variant="h6">Total Discount: 20$</Typography>
-                    <Typography variant="h6">Grand Total:80$</Typography>
+                    <Typography variant="h6">
+                      Total Quantity: {priceInfo?.totalQuantity}
+                    </Typography>
+                    <Typography variant="h6">
+                      Total Price: {priceInfo?.totalPrice.toFixed(2)}$
+                    </Typography>
+                    <Typography variant="h6">
+                      Total Discount: {priceInfo?.totalDiscount.toFixed(2)}$
+                    </Typography>
+                    <Typography variant="h6">
+                      Grand Total: {priceInfo?.grantTotal.toFixed(2)}$
+                    </Typography>
                     <WHiteSpace height={20} />
                     <Button
                       variant="contained"

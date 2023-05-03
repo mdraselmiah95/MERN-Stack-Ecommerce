@@ -16,6 +16,7 @@ export const storeProductInCart =
       notify("Product Added to Cart", "success");
     } catch (error) {
       dispatch(cartFailure(error.message));
+      notify("Something went wrong", "error");
     }
   };
 
@@ -26,5 +27,6 @@ export const clearCartsAction = () => async (dispatch) => {
     notify("Cart Cleared", "success");
   } catch (error) {
     dispatch(cartFailure(error.message));
+    notify("Something went wrong", "error");
   }
 };
