@@ -3,7 +3,7 @@ import React from "react";
 import WHiteSpace from "../../components/App/whitespac/WHiteSpace";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { clearCartsAction } from "../../redux/actions/CartAction";
+import { removeSpecificCartFromCartAction } from "../../redux/actions/CartAction";
 import { getCartDetails, getCartProductPriceInfo } from "../../utils/helper";
 
 const Cart = () => {
@@ -13,9 +13,13 @@ const Cart = () => {
   const navigate = useNavigate();
   const priceInfo = getCartProductPriceInfo(carts);
 
+  // const removeItemFromCart = (cart) => {
+  //   dispatch(clearCartsAction(cartProducts, cart));
+  //   navigate("/");
+  // };
+
   const removeItemFromCart = (cart) => {
-    dispatch(clearCartsAction(cartProducts, cart));
-    navigate("/");
+    dispatch(removeSpecificCartFromCartAction(cartProducts, cart));
   };
 
   return (
@@ -91,6 +95,7 @@ const Cart = () => {
                     pr: 5,
                     border: "none",
                     boxShadow: "none",
+                    borderBottom: "1px solid #ccc",
                   }}
                   key={index}
                 >
@@ -165,6 +170,7 @@ const Cart = () => {
                         justifyContent: "center",
                         alignItems: "center",
                       }}
+                      // onClick={() => removeItemFromCart(cart)}
                     >
                       Checkout
                     </Button>

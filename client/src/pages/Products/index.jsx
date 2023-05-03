@@ -5,11 +5,17 @@ import Data from "../../constants/Data";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions/ProductAction";
 import { useLocation } from "react-router-dom";
+import { storeProductInCart } from "../../redux/actions/CartAction";
 
 const Products = () => {
   const { search } = useLocation();
   const dispatch = useDispatch();
   const { productsInfo, isLoading } = useSelector((state) => state.products);
+  const { cartProducts } = useSelector((state) => state.carts);
+
+  const addToCart = (product) => {
+    dispatch(storeProductInCart(cartProducts, product));
+  };
 
   const getProducts = (query) => {
     if (query) return dispatch(getAllProducts(query));
@@ -45,7 +51,7 @@ const Products = () => {
               <FlashCard
                 product={product}
                 key={product._id}
-                // addToCart={addToCart}
+                addToCart={addToCart}
               />
             ))}
           {!isLoading && productsInfo.length === 0 && (
