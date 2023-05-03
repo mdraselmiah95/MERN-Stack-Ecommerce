@@ -1,5 +1,6 @@
 import { Avatar, Button, Card, Stack, Typography } from "@mui/material";
 import React from "react";
+import WHiteSpace from "../../components/App/whitespac/WHiteSpace";
 
 const Cart = () => {
   return (
@@ -87,6 +88,48 @@ const Cart = () => {
                 Remove
               </Button>
             </Card>
+            <Stack
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "flex-end",
+              }}
+              mt={5}
+            >
+              <Stack
+                sx={{
+                  width: "20%",
+                }}
+              >
+                <Stack
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    // alignItems: "center",
+                  }}
+                >
+                  <Typography variant="h6">Total Quantity: 7</Typography>
+                  <Typography variant="h6">Total Price: 100 $</Typography>
+                  <Typography variant="h6">Total Discount: 20$</Typography>
+                  <Typography variant="h6">Grand Total:80$</Typography>
+                  <WHiteSpace height={20} />
+                  <Button
+                    variant="contained"
+                    color="warning"
+                    sx={{
+                      width: "60%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    Checkout
+                  </Button>
+                </Stack>
+              </Stack>
+            </Stack>
           </Stack>
         </div>
       </div>
