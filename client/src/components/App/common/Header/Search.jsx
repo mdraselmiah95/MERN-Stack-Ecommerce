@@ -1,9 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import assets from "../../../../assets";
+import { getQueryUrl, useQuery } from "../../../../utils/helper";
 
 const Search = () => {
-  const handleKeyDown = async (event) => {};
+  const query = useQuery();
+  const category = query.get("category");
+  const navigate = useNavigate();
+  const handleKeyDown = async (event) => {
+    if (event.target.value === "") return;
+    if (event.key === "Enter") {
+      const queryUrl = getQueryUrl({
+        keyword: event.target.value,
+        category,
+      });
+      navigate(`/products?${queryUrl}`);
+    }
+  };
   return (
     <section className="search">
       <div className="container c_flex">

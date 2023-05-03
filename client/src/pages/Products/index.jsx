@@ -4,15 +4,22 @@ import FlashCard from "../../components/App/flashDeals/FlashCard";
 import Data from "../../constants/Data";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions/ProductAction";
+import { useLocation } from "react-router-dom";
 
 const Products = () => {
+  const { search } = useLocation();
   const dispatch = useDispatch();
   const { productsInfo, isLoading } = useSelector((state) => state.products);
+
+  const getProducts = (query) => {
+    if (query) return dispatch(getAllProducts(query));
+    return dispatch(getAllProducts());
+  };
+
   useEffect(() => {
-    if (productsInfo.length === 0) {
-      dispatch(getAllProducts());
-    }
-  }, [productsInfo]);
+    getProducts(search);
+  }, [search]);
+
   return (
     <section className="flash">
       <div className="container">
