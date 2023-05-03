@@ -2,8 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import assets from "../../../../assets";
 import { getQueryUrl, useQuery } from "../../../../utils/helper";
+import { useSelector } from "react-redux";
 
 const Search = () => {
+  const { cartProducts } = useSelector((state) => state.carts);
   const query = useQuery();
   const category = query.get("category");
   const navigate = useNavigate();
@@ -43,7 +45,7 @@ const Search = () => {
           <div className="cart">
             <Link to="/carts">
               <i className="fa fa-shopping-bag icon-circle" />
-              <span> 0</span>
+              <span>{cartProducts?.length ?? 0}</span>
             </Link>
           </div>
         </div>

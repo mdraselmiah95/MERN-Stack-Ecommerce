@@ -3,9 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import FlashCard from "./FlashCard";
 // import Data from "../../../constants/Data";
 import { CircularProgress, Stack } from "@mui/material";
+import { storeProductInCart } from "../../../redux/actions/CartAction";
 
 const FlashDeals = () => {
+  const dispatch = useDispatch();
   const { productsInfo, isLoading } = useSelector((state) => state.products);
+  const { cartProducts } = useSelector((state) => state.carts);
+
+  const addToCart = (product) => {
+    dispatch(storeProductInCart(cartProducts, product));
+  };
+
   return (
     <section className="flash">
       <div className="container">
@@ -28,7 +36,13 @@ const FlashDeals = () => {
           )}
           {productsInfo?.length > 0 &&
             productsInfo?.map((item) => {
-              return <FlashCard key={item._id} product={item} />;
+              return (
+                <FlashCard
+                  key={item._id}
+                  product={item}
+                  addToCart={addToCart}
+                />
+              );
             })}
           {!isLoading && productsInfo.length === 0 && (
             <Stack

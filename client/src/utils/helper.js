@@ -26,3 +26,25 @@ export const getCartDetails = (cartProducts) => {
 export const convertObjectToArray = (object) => {
   return Object.keys(object).map((key) => object[key]);
 };
+
+export const notify = (message, type) => {
+  switch (type) {
+    case "success":
+      toast.success(message, {
+        position: "bottom-right",
+        className: `foo-bar ${type}`,
+      });
+      break;
+    case "error":
+      toast.error(message, {
+        position: "bottom-right",
+        className: `foo-bar ${type}`,
+      });
+      break;
+    default:
+      toast(message, {
+        position: "bottom-right",
+        className: `foo-bar ${type}`,
+      });
+  }
+};

@@ -94,7 +94,7 @@ const Cart = () => {
                   key={index}
                 >
                   <Typography variant="h6" component="div">
-                    #{index + 1}
+                    {index + 1}
                   </Typography>
 
                   <Avatar
